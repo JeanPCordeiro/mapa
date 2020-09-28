@@ -26,7 +26,8 @@ class CollectStatusController extends Controller
         // renvoyer une réponse de la forme
         // usine, nb lignes à état 0, 1 et 2
 
-        $factories = DB::table('collectes')->select('factory','line','state')->distinct()->where('date','202008')->get();
+        //$factories = DB::table('collectes')->select('factory','line','state')->distinct()->where('date','202008')->get();
+        $factories = DB::table('collectes')->select('factory','line','state')->distinct()->where([['factory', '=', 'BEAUVAIS'],['date', '=', '202008']])->get();
         return view('collect-status',compact('factories'));
     }
 

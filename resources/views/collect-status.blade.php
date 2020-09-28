@@ -13,32 +13,45 @@
 
 
     $area = json_decode($factories, true);
-
+    $nb0=0;
+    $nb1=0;
+    $nb2=0;
    foreach($area as $i => $v)
     {
         echo $v['factory'].' ';
         echo $v['line'].' ';
         echo $v['state'].'<br/>';
-   }
+        if ($v['state']=='0') $nb0++;
+        if ($v['state']=='1') $nb1++;
+        if ($v['state']=='2') $nb2++;
+        
 
+   }
+   $nbTot = $nb0+$nb1+$nb2;
+   $rate0 = $nb0/$nbTot*100;
+   $rate1 = $nb1/$nbTot*100;
+   $rate2 = $nb2/$nbTot*100;
+   
 ?>
+
+{!!$nbTot!!}
 
     <div class="container-fluid">
 
     <div class="row">
           <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box bg-success">
-              <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>
+              <span class="info-box-icon"><i class="fas fa-hourglass-end"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Likes</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-text">Completed</span>
+                <span class="info-box-number">{!!$nb2!!}</span>
 
                 <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                  70% Increase in 30 Days
+                {!!$rate2!!} %
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -48,17 +61,17 @@
           <!-- /.col -->
           <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box bg-warning">
-              <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
+              <span class="info-box-icon"><i class="fas fa-hourglass-half"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Events</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-text">In Progress</span>
+                <span class="info-box-number">{!!$nb1!!}</span>
 
                 <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                  70% Increase in 30 Days
+                {!!$rate1!!} %
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -68,17 +81,17 @@
           <!-- /.col -->
           <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box bg-danger">
-              <span class="info-box-icon"><i class="fas fa-comments"></i></span>
+              <span class="info-box-icon"><i class="fas fa-hourglass-start"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Comments</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-text">To Be Done</span>
+                <span class="info-box-number">{!!$nb0!!}</span>
 
                 <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                  70% Increase in 30 Days
+                {!!$rate0!!} %
                 </span>
               </div>
               <!-- /.info-box-content -->
