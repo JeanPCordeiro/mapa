@@ -256,15 +256,22 @@ return [
             'label'       => 2,
             'label_color' => 'success',
         ],     
-        ['header' => 'COLLECT'],
+        ['header' => 'COLLECT STATUS'],
         [
-            'text'        => 'Status',
-            'url'         => 'collect-status',
+            'text'        => 'Beauvais',
+            'url'         => 'collect-status/BEAUVAIS',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 0,
             'label_color' => 'success',
         ],
-   
+        [
+            'text'        => 'St Hyppolite',
+            'url'         => 'collect-status/SHL',
+            'icon'        => 'far fa-fw fa-file',
+            'label'       => 0,
+            'label_color' => 'success',
+        ],
+ 
     ],
 
     /*

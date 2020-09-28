@@ -10,31 +10,21 @@
 
 
 <?php
-
-
     $area = json_decode($factories, true);
     $nb0=0;
     $nb1=0;
     $nb2=0;
-   foreach($area as $i => $v)
+    foreach($area as $i => $v)
     {
-        echo $v['factory'].' ';
-        echo $v['line'].' ';
-        echo $v['state'].'<br/>';
         if ($v['state']=='0') $nb0++;
         if ($v['state']=='1') $nb1++;
         if ($v['state']=='2') $nb2++;
-        
-
-   }
-   $nbTot = $nb0+$nb1+$nb2;
-   $rate0 = $nb0/$nbTot*100;
-   $rate1 = $nb1/$nbTot*100;
-   $rate2 = $nb2/$nbTot*100;
-   
+    }
+    $nbTot = $nb0+$nb1+$nb2;
+    $rate0 = $nb0/$nbTot*100;
+    $rate1 = $nb1/$nbTot*100;
+    $rate2 = $nb2/$nbTot*100;
 ?>
-
-{!!$nbTot!!}
 
     <div class="container-fluid">
 
