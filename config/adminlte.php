@@ -255,7 +255,16 @@ return [
             'icon'        => 'far fa-fw fa-file',
             'label'       => 2,
             'label_color' => 'success',
-        ],        
+        ],     
+        ['header' => 'COLLECT'],
+        [
+            'text'        => 'Status',
+            'url'         => 'collect-status',
+            'icon'        => 'far fa-fw fa-file',
+            'label'       => 0,
+            'label_color' => 'success',
+        ],
+   
     ],
 
     /*

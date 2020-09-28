@@ -5,8 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Collecte;
 use Illuminate\Http\Request;
 
-class CollecteController extends Controller
+use DB;
+
+class CollectStatusController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +23,11 @@ class CollecteController extends Controller
     public function index()
     {
         //
+        // renvoyer une réponse de la forme
+        // usine, nb lignes à état 0, 1 et 2
+
+        $factories = DB::table('collectes')->select('factory','line','state')->distinct()->where('date','202008')->get();
+        return view('collect-status',compact('factories'));
     }
 
     /**

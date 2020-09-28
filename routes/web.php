@@ -23,6 +23,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/pages', [App\Http\Controllers\PagesController::class, 'index'])->name('pages');
 Route::get('/cellulose', [App\Http\Controllers\CelluloseController::class, 'index'])->name('cellulose');
+Route::get('/collect-status', [App\Http\Controllers\CollectStatusController::class, 'index'])->name('collect-status');
+
 
 Auth::routes();
 
