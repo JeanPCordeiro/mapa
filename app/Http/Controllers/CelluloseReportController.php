@@ -30,8 +30,10 @@ class CelluloseReportController extends Controller
         //$monthCV = DB::table('collectes')->where('factory', 'BEAUVAIS')->where('line', 'CV')->orderByRaw('date ASC')->pluck('date');
         $targetrate = json_encode(array(5,5,5,5,5,5,5,5,5,5,5,5));
         $data = DB::table('collectes')->where([['factory', '=', $factory],['line', '=', $line]])->limit(12)->orderByRaw('date ASC')->pluck('rate');
+        $work = DB::table('collectes')->where([['factory', '=', $factory],['line', '=', $line]])->limit(12)->orderByRaw('date ASC')->pluck('work');
+        $break = DB::table('collectes')->where([['factory', '=', $factory],['line', '=', $line]])->limit(12)->orderByRaw('date ASC')->pluck('break');
         $month = DB::table('collectes')->where([['factory', '=', $factory],['line', '=', $line]])->limit(12)->orderByRaw('date ASC')->pluck('date');
         $dataYTD = DB::table('collectes')->where([['factory', '=', $factory],['line', '=', $line]])->limit(12)->orderByRaw('date ASC')->pluck('ytd');
-        return view('cellulose-report',compact('factory','line','targetrate','data','dataYTD','month'));
+        return view('cellulose-report',compact('factory','line','targetrate','data','dataYTD','month','work','break'));
     }
 }
