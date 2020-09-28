@@ -17,6 +17,8 @@
     <form action="{{ $register_url }}" method="post">
         {{ csrf_field() }}
 
+        Self registring is disabled
+        <!--
         {{-- Name field --}}
         <div class="input-group mb-3">
             <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
@@ -83,11 +85,13 @@
             @endif
         </div>
 
+        
         {{-- Register button --}}
         <button type="submit" class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
             <span class="fas fa-user-plus"></span>
             {{ __('adminlte::adminlte.register') }}
         </button>
+        !-->
 
     </form>
 @stop

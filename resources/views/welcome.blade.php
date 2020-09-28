@@ -22,6 +22,7 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+            <B>
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
@@ -29,13 +30,10 @@
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
                     @endif
                 </div>
             @endif
-
+            </B>
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <img src="/img/logomapa.jpeg">
@@ -49,7 +47,7 @@
                             </div>
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Description du site.
+                                    This is the site for collecting and reporting Mapa Spontex Plant's indicators.
                                 </div>
                             </div>
                         </div>
@@ -60,7 +58,7 @@
                             </div>
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Dernières nouveautés.
+                                    <B>2020/09/28 : </B>First version of the site.<BR>
                                 </div>
                             </div>
                         </div>

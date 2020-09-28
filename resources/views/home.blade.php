@@ -3,7 +3,7 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-<h1 class="m-0 text-dark">Dashboard</h1>
+<h1 class="m-0 text-dark">Welcome</h1>
 @stop
 
 @section('content')
@@ -11,8 +11,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <p class="mb-0">You are logged in!</p>
-                <p><B>Welcome</B> to Mapa Spontex Reporting site.</p>
+                <p>Hi <B>{{ Auth::user()->name }}</B>, nice to see you on Mapa Spontex Reporting site !</p>
             </div>
         </div>
     </div>
