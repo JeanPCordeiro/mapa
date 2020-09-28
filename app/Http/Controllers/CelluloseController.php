@@ -28,10 +28,10 @@ class CelluloseController extends Controller
         //$data  = array(1, 2, 3, 4, 5);
         //$dataCV = DB::table('collectes')->where('factory', 'BEAUVAIS')->where('line', 'CV')->orderByRaw('date ASC')->pluck('rate');
         //$monthCV = DB::table('collectes')->where('factory', 'BEAUVAIS')->where('line', 'CV')->orderByRaw('date ASC')->pluck('date');
-        $dataCE = DB::table('collectes')->where([['factory', '=', 'BEAUVAIS'],['line', '=', 'CE']])->limit(12)->orderByRaw('date ASC')->pluck('rate');
-        $monthCE = DB::table('collectes')->where([['factory', '=', 'BEAUVAIS'],['line', '=', 'CE']])->limit(12)->orderByRaw('date ASC')->pluck('date');
-        $dataCV = DB::table('collectes')->where([['factory', '=', 'BEAUVAIS'],['line', '=', 'CV']])->limit(12)->orderByRaw('date ASC')->pluck('rate');
-        $monthCV = DB::table('collectes')->where([['factory', '=', 'BEAUVAIS'],['line', '=', 'CV']])->limit(12)->orderByRaw('date ASC')->pluck('date');
+        $dataCE = DB::table('collectes')->where([['factory', '=', 'BVS'],['line', '=', 'CE']])->limit(12)->orderByRaw('date ASC')->pluck('rate');
+        $monthCE = DB::table('collectes')->where([['factory', '=', 'BVS'],['line', '=', 'CE']])->limit(12)->orderByRaw('date ASC')->pluck('date');
+        $dataCV = DB::table('collectes')->where([['factory', '=', 'BVS'],['line', '=', 'CV']])->limit(12)->orderByRaw('date ASC')->pluck('rate');
+        $monthCV = DB::table('collectes')->where([['factory', '=', 'BVS'],['line', '=', 'CV']])->limit(12)->orderByRaw('date ASC')->pluck('date');
         $targetrate = json_encode(array(5,5,5,5,5,5,5,5,5,5,5,5));
         $data_SHL_CE = DB::table('collectes')->where([['factory', '=', 'SHL'],['line', '=', 'CE']])->limit(12)->orderByRaw('date ASC')->pluck('rate');
         $data_SHL_CE_YTD = DB::table('collectes')->where([['factory', '=', 'SHL'],['line', '=', 'CE']])->limit(12)->orderByRaw('date ASC')->pluck('ytd');

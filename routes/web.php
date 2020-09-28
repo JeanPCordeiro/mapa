@@ -25,6 +25,7 @@ Route::get('/pages', [App\Http\Controllers\PagesController::class, 'index'])->na
 Route::get('/cellulose', [App\Http\Controllers\CelluloseController::class, 'index'])->name('cellulose');
 //Route::get('/collect-status', [App\Http\Controllers\CollectStatusController::class, 'index'])->name('collect-status');
 Route::get('/collect-status/{factory}', [App\Http\Controllers\CollectStatusController::class, 'index'])->name('collect-status');
+Route::get('/cellulose-report/{factory}/{line}', [App\Http\Controllers\CelluloseReportController::class, 'index'])->name('cellulose-report');
 
 
 Auth::routes();

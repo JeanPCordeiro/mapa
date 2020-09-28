@@ -12,6 +12,7 @@
         <div class="card">
             <div class="card-body">
                 <p class="mb-0">You are logged in!</p>
+                <p><B>Welcome</B> to Mapa Spontex Reporting site.</p>
             </div>
         </div>
     </div>

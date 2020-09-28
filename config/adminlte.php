@@ -231,46 +231,51 @@ return [
     */
 
     'menu' => [
-        [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        ['header' => 'REPORTS'],
-        [
-            'text'        => 'Latex',
-            'url'         => 'pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 0,
-            'label_color' => 'success',
-        ],
-        [
-            'text'        => 'Cellulose',
-            'url'         => 'cellulose',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 2,
-            'label_color' => 'success',
-        ],     
         ['header' => 'COLLECT STATUS'],
         [
             'text'        => 'Beauvais',
-            'url'         => 'collect-status/BEAUVAIS',
+            'url'         => 'collect-status/BVS',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 0,
-            'label_color' => 'success',
         ],
         [
             'text'        => 'St Hyppolite',
             'url'         => 'collect-status/SHL',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 0,
-            'label_color' => 'success',
         ],
+        ['header' => 'REPORTS'],
+        [
+            'text'    => 'Cellulose',
+            'icon'    => 'far fa-fw fa-file',
+            'submenu' => [
+                [
+                    'text' => 'Beauvais',
+                    'icon'        => 'fas fa-map-marker',
+                    'label'       => 2,
+                    'submenu' => [
+                        [
+                            'text' => '     Line CE',
+                            'url'  => 'cellulose-report/BVS/CE',
+                        ],
+                        [
+                            'text' => '     Line CV',
+                            'url'  => 'cellulose-report/BVS/CV',
+                        ],
+                    ],
+                ],
+                [
+                    'text' => 'St Hyppolite',
+                    'icon'        => 'fas fa-map-marker',
+                    'label'       => 1,
+                    'submenu' => [
+                        [
+                            'text' => '     Line CE',
+                            'url'  => 'cellulose-report/SHL/CE',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
  
     ],
 
