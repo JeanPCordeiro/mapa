@@ -100,3 +100,5 @@ ALTER TABLE `collectes`
 --
 ALTER TABLE `collectes`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+
+  
