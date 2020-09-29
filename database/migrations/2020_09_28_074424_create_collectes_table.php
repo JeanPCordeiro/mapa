@@ -22,6 +22,7 @@ class CreateCollectesTable extends Migration
             $table->float('work');
             $table->float('break');
             $table->float('rate');
+            $table->float('ytd');
             $table->integer('state');
         });
     }
