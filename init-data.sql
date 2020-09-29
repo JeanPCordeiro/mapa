@@ -3,16 +3,41 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 29, 2020 at 05:43 AM
+-- Generation Time: Sep 29, 2020 at 08:43 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Jean Pierre Cordeiro', 'jeanpierre.cordeiro@gmail.com', NULL, '$2y$10$dYzSS9OBHT.5ub2sO7YaPesMrqMWNTPkLipzWs9UPYi/DhdUstjZS', NULL, '2020-09-27 14:30:19', '2020-09-27 14:30:19');
+
+
 --
 -- Database: `mapa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `collectes`
+--
+
+CREATE TABLE `collectes` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `date` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `factory` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `line` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `work` double(8,2) NOT NULL,
+  `break` double(8,2) NOT NULL,
+  `rate` double(8,2) NOT NULL,
+  `ytd` double(8,2) NOT NULL,
+  `state` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `collectes`
@@ -55,3 +80,23 @@ INSERT INTO `collectes` (`id`, `created_at`, `updated_at`, `date`, `factory`, `l
 (65, NULL, NULL, '201911', 'SHL', 'CE', 1350.00, 60.00, 4.44, 0.00, 2),
 (66, NULL, NULL, '201910', 'SHL', 'CE', 1395.00, 65.00, 4.66, 0.00, 2),
 (67, NULL, NULL, '201909', 'SHL', 'CE', 1350.00, 73.00, 5.41, 0.00, 2);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `collectes`
+--
+ALTER TABLE `collectes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `collectes`
+--
+ALTER TABLE `collectes`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
