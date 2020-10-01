@@ -27,9 +27,6 @@ Route::get('/cellulose', [App\Http\Controllers\CelluloseController::class, 'inde
 Route::get('/collect-status/{factory}', [App\Http\Controllers\CollectStatusController::class, 'index'])->name('collect-status');
 Route::get('/cellulose-report/{factory}/{line}', [App\Http\Controllers\CelluloseReportController::class, 'index'])->name('cellulose-report');
 
-
-Auth::routes();
-
 Route::get('/home', function() {
     return view('home');
 })->name('home')->middleware('auth');

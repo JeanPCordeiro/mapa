@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Collecte;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 use DB;
 
@@ -27,8 +28,13 @@ class CollectStatusController extends Controller
         // usine, nb lignes à état 0, 1 et 2
 
         //$factories = DB::table('collectes')->select('factory','line','state')->distinct()->where('date','202008')->get();
-        $factories = DB::table('collectes')->select('factory','line','state')->distinct()->where([['factory', '=', $factory],['date', '=', '202008']])->get();
-        return view('collect-status',compact('factories'));
+    
+        if (Gate::allows('admin-only')) {
+            // The current user can edit settings
+            $factories = DB::table('collectes')->select('factory','line','state')->distinct()->where([['factory', '=', $factory],['date', '=', '202008']])->get();
+            return view('collect-status',compact('factories'));
+        }
+        return view('home');
     }
 
     /**

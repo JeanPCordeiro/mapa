@@ -231,16 +231,16 @@ return [
     */
 
     'menu' => [
-        ['header' => 'COLLECT STATUS'],
+        ['header' => 'COLLECT STATUS','can' => 'admin-only'],
         [
             'text'        => 'Beauvais',
             'url'         => 'collect-status/BVS',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'far fa-fw fa-file', 'can' => 'admin-only'
         ],
         [
             'text'        => 'St Hyppolite',
             'url'         => 'collect-status/SHL',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'far fa-fw fa-file', 'can' => 'admin-only'
         ],
         ['header' => 'REPORTS'],
         [
@@ -275,9 +275,8 @@ return [
                 ],
             ],
         ],
-
- 
     ],
+
 
     /*
     |--------------------------------------------------------------------------

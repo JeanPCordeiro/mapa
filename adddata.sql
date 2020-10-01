@@ -11,9 +11,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Jean Pierre Cordeiro', 'jeanpierre.cordeiro@gmail.com', NULL, '$2y$10$dYzSS9OBHT.5ub2sO7YaPesMrqMWNTPkLipzWs9UPYi/DhdUstjZS', NULL, '2020-09-27 14:30:19', '2020-09-27 14:30:19');
-
 
 --
 -- Database: `mapa`
@@ -68,24 +65,3 @@ INSERT INTO `collectes` (`id`, `created_at`, `updated_at`, `date`, `factory`, `l
 (66, NULL, NULL, '201910', 'SHL', 'CE', 1395.00, 65.00, 4.66, 0.00, 2),
 (67, NULL, NULL, '201909', 'SHL', 'CE', 1350.00, 73.00, 5.41, 0.00, 2);
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `collectes`
---
-ALTER TABLE `collectes`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `collectes`
---
-ALTER TABLE `collectes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
-
-  
